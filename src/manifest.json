@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Steam Redirect",
+    "description": "Avoids the notice Steam displays when you're opening a non-Steam page.",
+    "version": "1.0",
+    
+    "content_scripts": [
+        {
+            "matches": ["https://steamcommunity.com/linkfilter/*","http://steamcommunity.com/linkfilter/*"],
+            "js": ["redirect.js"],
+            "run_at": "document_start"
+        }
+    ]
+}
