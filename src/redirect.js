@@ -1,9 +1,24 @@
 function getUrlVars() {
     var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+
+    //regexes are hard things to understand, but i think i've got this right
+    //g = global match
+    //i = ignore case
+
+    //[?&]+([^=&]+) match what follows ? or & untill we meet a = or &
+    //([^&]*) match what follows = untill we meet a &
+
+
+    var regex = /[\?&]+([^=&]+)=([^&]*)/gi;
+
+
+    var parts = window.location.href.replace(regex,
+
         function(m,key,value) {
             vars[key] = value;
-        });
+        }
+    
+    );
     return vars;
 }
 
