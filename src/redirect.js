@@ -5,7 +5,7 @@ function getUrlVars() {
     //g = global match
     //i = ignore case
 
-    //[?&]+([^=&]+) match what follows ? or & untill we meet a = or &
+    //[\?&]+([^=&]+) match what follows ? or & untill we meet a = or &
     //([^&]*) match what follows = untill we meet a &
 
 
@@ -14,7 +14,7 @@ function getUrlVars() {
 
     var parts = window.location.href.replace(regex,
 
-        function(m,key,value) {
+        function(m, key, value) {
             vars[key] = value;
         }
     
